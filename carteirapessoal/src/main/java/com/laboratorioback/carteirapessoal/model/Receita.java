@@ -1,0 +1,96 @@
+package com.laboratorioback.carteirapessoal.model;
+
+import com.laboratorioback.carteirapessoal.enuns.TipoReceita;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.Objects;
+
+public class Receita {
+    //Id
+    private Long id;
+    //valor receita
+    private BigDecimal receita;
+    //data recebimento esperado
+    private Date recebimentoEsperado;
+    //data recebimento atual
+    private Date receitaAtual;
+    //descrição
+    private String descricao;
+
+    private TipoReceita tipoReceita;
+
+    private Receita(){
+
+    }
+
+    public Receita(Long id, BigDecimal receita, Date recebimentoEsperado, Date receitaAtual, String descricao, TipoReceita tipoReceita) {
+        this.id = id;
+        this.receita = receita;
+        this.recebimentoEsperado = recebimentoEsperado;
+        this.receitaAtual = receitaAtual;
+        this.descricao = descricao;
+        this.tipoReceita = tipoReceita;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public BigDecimal getReceita() {
+        return receita;
+    }
+
+    public void setReceita(BigDecimal receita) {
+        this.receita = receita;
+    }
+
+    public Date getRecebimentoEsperado() {
+        return recebimentoEsperado;
+    }
+
+    public void setRecebimentoEsperado(Date recebimentoEsperado) {
+        this.recebimentoEsperado = recebimentoEsperado;
+    }
+
+    public Date getReceitaAtual() {
+        return receitaAtual;
+    }
+
+    public void setReceitaAtual(Date receitaAtual) {
+        this.receitaAtual = receitaAtual;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public TipoReceita getTipoReceita() {
+        return tipoReceita;
+    }
+
+    public void setTipoReceita(TipoReceita tipoReceita) {
+        this.tipoReceita = tipoReceita;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Receita receita = (Receita) o;
+        return id.equals(receita.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+}
