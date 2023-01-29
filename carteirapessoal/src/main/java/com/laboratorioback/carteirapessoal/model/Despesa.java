@@ -1,5 +1,7 @@
 package com.laboratorioback.carteirapessoal.model;
 
+import com.laboratorioback.carteirapessoal.enuns.TipoDespesa;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
@@ -11,12 +13,14 @@ public class Despesa {
     private Date pagamentoDespesa;
     private Date vencimentoDespesa;
 
-    public Despesa(Long id, BigDecimal valor, Date pagamentoDespesa, Date vencimentoDespesa) {
+    private TipoDespesa TipoDespesa;
+
+    public Despesa(Long id, BigDecimal valor, Date pagamentoDespesa, Date vencimentoDespesa, com.laboratorioback.carteirapessoal.enuns.TipoDespesa tipoDespesa) {
         this.id = id;
         this.valor = valor;
         this.pagamentoDespesa = pagamentoDespesa;
         this.vencimentoDespesa = vencimentoDespesa;
-
+        TipoDespesa = tipoDespesa;
     }
 
     public Long getId() {
@@ -49,6 +53,14 @@ public class Despesa {
 
     public void setVencimentoDespesa(Date vencimentoDespesa) {
         this.vencimentoDespesa = vencimentoDespesa;
+    }
+
+    public com.laboratorioback.carteirapessoal.enuns.TipoDespesa getTipoDespesa() {
+        return TipoDespesa;
+    }
+
+    public void setTipoDespesa(com.laboratorioback.carteirapessoal.enuns.TipoDespesa tipoDespesa) {
+        TipoDespesa = tipoDespesa;
     }
 
     @Override
