@@ -3,8 +3,7 @@ package com.laboratorioback.carteirapessoal.model;
 import com.laboratorioback.carteirapessoal.enuns.TipoReceita;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,7 +12,7 @@ import java.util.Objects;
 @Entity
 public class Receita {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue()
     private Long id;
     //valor receita
     private BigDecimal receita;

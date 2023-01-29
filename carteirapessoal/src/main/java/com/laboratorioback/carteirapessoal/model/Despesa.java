@@ -1,13 +1,20 @@
 package com.laboratorioback.carteirapessoal.model;
 
 import com.laboratorioback.carteirapessoal.enuns.TipoDespesa;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
-public class Despesa {
 
+@Entity
+public class Despesa {
+    @Id
+    @GeneratedValue()
     private Long id;
     private BigDecimal valor;
     private Date pagamentoDespesa;
