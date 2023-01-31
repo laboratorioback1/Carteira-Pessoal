@@ -5,4 +5,6 @@ public enum TipoReceita {
     PREMIO,
     PRESENTE,
     OUTROS;
+
+    private final String descricao = "";
 }

@@ -15,10 +15,12 @@ public class Receita {
     @GeneratedValue()
     private Long id;
     //valor receita
-    private BigDecimal receita;
+    private BigDecimal valorReceita;
     //data recebimento esperado
+
     private Date recebimentoEsperado;
     //data recebimento atual
+
     private Date receitaAtual;
     //descrição
     private String descricao;
@@ -29,9 +31,9 @@ public class Receita {
 
     }
 
-    public Receita(Long id, BigDecimal receita, Date recebimentoEsperado, Date receitaAtual, String descricao, TipoReceita tipoReceita) {
+    public Receita(Long id, BigDecimal valorReceita, Date recebimentoEsperado, Date receitaAtual, String descricao, TipoReceita tipoReceita) {
         this.id = id;
-        this.receita = receita;
+        this.valorReceita = new BigDecimal(String.valueOf(valorReceita));
         this.recebimentoEsperado = recebimentoEsperado;
         this.receitaAtual = receitaAtual;
         this.descricao = descricao;
@@ -46,12 +48,12 @@ public class Receita {
         this.id = id;
     }
 
-    public BigDecimal getReceita() {
-        return receita;
+    public BigDecimal getValorReceita() {
+        return valorReceita;
     }
 
-    public void setReceita(BigDecimal receita) {
-        this.receita = receita;
+    public void setValorReceita(BigDecimal valorReceita) {
+        this.valorReceita = valorReceita;
     }
 
     public Date getRecebimentoEsperado() {
